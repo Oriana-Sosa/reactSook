@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
         fetch(`../../src/products/productos.json`)
         .then((res) => res.json())
         .then((data) => {
-            const obj = data.find(x => x.categoria === (categoria))
+            const obj = data.filter(x => x.categoria === (categoria))
             setProducto(obj)
         })
     }, [categoria]);

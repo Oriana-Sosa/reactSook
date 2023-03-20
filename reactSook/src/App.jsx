@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar'
 import { useEffect, useState } from 'react'
 import {Routes, Route, Navigate} from 'react-router-dom'
 import ItemDetail from './components/ItemDetail/ItemDetail'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
     <Routes>
       <Route path="/" element={<ItemListContainer products={products} /> } />
       <Route path='/:id' element={<ItemDetail/>} />
+      <Route path='/:categoria' element={<ItemDetailContainer/>} />
+      <Route path='/:categoria' element={<ItemDetailContainer/>} />
     </Routes>
     </>
   )

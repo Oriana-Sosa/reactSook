@@ -6,16 +6,25 @@ const ItemDetail = () => {
     const { id } = useParams()
     
     useEffect(() => {
-        fetch(`../../products/productos.json/${id}`)
+        fetch(`../../src/products/productos.json`)
         .then((res) => res.json())
-        .then((data) => setProducto(data));
+        .then((data) => {
+            const obj = data.find(x => x.id === parseInt(id))
+            setProducto(obj)
+        })
     }, []);
 
 
     return (
         <div>
-            <h3>1</h3>
+            <h3>{producto.nombre}</h3>
+            <img src={producto.imagen} alt="" />
+            <h5>{producto.categoria}</h5>
+            <p>${producto.precio}</p>
+            <p>{producto.descripcion}</p>
+            <p>{producto.color}</p>
         </div>
+
     )
 }
 

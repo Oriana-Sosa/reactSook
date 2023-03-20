@@ -17,10 +17,10 @@ const NavBar = () => {
                 <div className="offcanvas-body justify-content-md-end">
                     <ul className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="buzos">Buzos</NavLink>
+                        <NavLink className="nav-link" to="/buzos">Buzos</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="Gorras">Gorras</NavLink>
+                        <NavLink className="nav-link" to="/gorras">Gorras</NavLink>
                     </li>
                     </ul>
                     <CartWidget/>

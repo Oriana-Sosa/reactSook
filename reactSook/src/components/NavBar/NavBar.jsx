@@ -1,11 +1,12 @@
 import styles from "./navbar.css"
 import CartWidget from "../CartWidget/CartWidget"
+import {NavLink} from  "react-router-dom"
 
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-md ">
             <div className="container-fluid">
-                <a className="brand">Sook</a>
+                <NavLink className="brand" to="/">Sook</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -16,10 +17,10 @@ const NavBar = () => {
                 <div className="offcanvas-body justify-content-md-end">
                     <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href="#">Buzos</a>
+                        <NavLink className="nav-link" to="buzos">Buzos</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Gorras</a>
+                        <NavLink className="nav-link" to="Gorras">Gorras</NavLink>
                     </li>
                     </ul>
                     <CartWidget/>

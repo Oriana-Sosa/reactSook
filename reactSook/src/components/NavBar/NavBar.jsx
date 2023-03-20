@@ -19,7 +19,7 @@ const NavBar = () => {
                         <a className="nav-link" aria-current="page" href="#">Buzos</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Remeras</a>
+                        <a className="nav-link" href="#">Gorras</a>
                     </li>
                     </ul>
                     <CartWidget/>

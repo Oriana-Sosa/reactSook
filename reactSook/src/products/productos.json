@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "categoria": "buzos",
+        "descripcion": "Buzo con capucha, bolsillo delantero e ilustraciones bordadas a máquina. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Flowers",
+        "precio": 7220,
+        "color": "Negro",
+        "imagen": "../public/buzo3.webp"
+    },
+    
+    {
+        "id": 2,
+        "categoria": "buzos",
+        "descripcion": "Buzo con capucha, bolsillo delantero e imágen bordada a máquina. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Legendary",
+        "precio": 9220,
+        "color": "Negro",
+        "imagen": "../public/buzo0.webp"
+    },
+
+    {
+        "id": 3,
+        "categoria": "buzos",
+        "descripcion": "Buzo con capucha, bolsillo delantero e inscripciones bordadas a máquina. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Reputation",
+        "precio": 8130,
+        "color": "Negro",
+        "imagen": "../public/buzo2.webp"
+    },
+
+    {
+        "id": 4,
+        "categoria": "buzos",
+        "descripcion": "Buzo con capucha, bolsillo delantero e inscripciones bordadas a máquina. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Los Ángeles",
+        "precio": 5697,
+        "color": "Negro",
+        "imagen": "../public/buzo8.webp"
+    },
+
+
+    {
+        "id": 5,
+        "categoria": "buzos",
+        "descripcion": "Buzo con capucha, bolsillo delantero e inscripción bordada a máquina. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Chapter One",
+        "precio": 7220,
+        "color": "Beige",
+        "imagen": "../public/buzo5.webp"
+    },
+
+    {
+        "id": 6,
+        "categoria": "buzos",
+        "descripcion": "Buzo con capucha e imágen sublimada. Sin bolsillos. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Monet",
+        "precio": 4520,
+        "color": "Blanco",
+        "imagen": "../public/buzo6.webp"
+    },
+
+    {
+        "id": 7,
+        "categoria": "buzos",
+        "descripcion": "Buzo sin capucha con ilustraciones bordadas a máquina. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Wildflower",
+        "precio": 8959,
+        "color": "Celeste",
+        "imagen": "../public/buzo4.jpg"
+    },
+
+    {
+        "id": 8,
+        "categoria": "buzos",
+        "descripcion": "Buzo sin capucha con imágen sublimada. Hecho con 80% algodón y 20% poliéster. Talle único.",
+        "nombre": "Buzo Kanagawa",
+        "precio": 8588,
+        "color": "Blanco",
+        "imagen": "../public/buzo7.webp"
+    },
+
+    {
+        "id": 9,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con inscripción bordada a máquina.",
+        "nombre": "Gorra Still Life",
+        "precio": 5122,
+        "color": "Celeste",
+        "imagen": "../public/gorra1.jpg"
+    },
+
+    {
+        "id": 10,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con ilustración bordada a máquina.",
+        "nombre": "Gorra Sunflower",
+        "precio": 4142,
+        "color": "Negro",
+        "imagen": "../public/gorra2.webp"
+    },
+
+    {
+        "id": 11,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con inscripción bordada a máquina.",
+        "nombre": "Gorra Arcade",
+        "precio": 2254,
+        "color": "Violeta",
+        "imagen": "../public/gorra3.webp"
+    },
+
+    {
+        "id": 12,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con ilustración bordada a máquina.",
+        "nombre": "Gorra Pantera",
+        "precio": 1545,
+        "color": "Negro",
+        "imagen": "../public/gorra4.webp"
+    },
+
+    {
+        "id": 13,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con inscripción bordada a máquina.",
+        "nombre": "Gorra Adidas",
+        "precio": 4214,
+        "color": "Menta",
+        "imagen": "../public/gorra7.webp"
+    },
+
+    {
+        "id": 14,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con adornos metálicos.",
+        "nombre": "Gorra Perforaciones",
+        "precio": 2124,
+        "color": "Violeta",
+        "imagen": "../public/gorra5.webp"
+    },
+
+    {
+        "id": 15,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster",
+        "nombre": "Gorra Salmón",
+        "precio": 2736,
+        "color": "Rosa",
+        "imagen": "../public/gorra6.webp"
+    },
+
+    {
+        "id": 16,
+        "categoria": "gorras",
+        "descripcion": "Gorra ajustable de poliéster con ilustración bordada a máquina.",
+        "nombre": "Gorra Ice Cream",
+        "precio": 2241,
+        "color": "Rosa",
+        "imagen": "../public/gorra8.webp"
+    }
+]

@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
     const { categoria } = useParams()
     
     useEffect(() => {
-        fetch(`../../src/products/productos.json`)
+        fetch("../../src/products/productos.json")
         .then((res) => res.json())
         .then((data) => {
             const obj = data.filter(x => x.categoria === (categoria))
@@ -18,9 +18,7 @@ const ItemDetailContainer = () => {
     
     return (
         <div>
-            {producto.map ((producto)=>
-                <h3>{producto.nombre}</h3>
-            )}
+            <h3>hola</h3>
         </div>
     )
 }

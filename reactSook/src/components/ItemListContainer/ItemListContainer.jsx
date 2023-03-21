@@ -7,8 +7,8 @@ const ItemListContainer = ({products}) => {
 
 
     return (
-        <div className="d-flex flex-wrap justify-content-around">
-            <div className="row"> 
+        <div className="container-fluid ">
+            <div className="row d-flex flex-wrap justify-content-around"> 
             {products.map((producto)=>(
                 <Item key={producto.id} producto={producto}/>
             ))}

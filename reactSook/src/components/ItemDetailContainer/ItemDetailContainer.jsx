@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState({})
+    const [producto, setProducto] = useState([])
     const { categoria } = useParams()
     
     useEffect(() => {
@@ -13,9 +13,9 @@ const ItemDetailContainer = () => {
             const obj = data.filter(x => x.categoria === (categoria))
             setProducto(obj)
         })
-    }, [categoria]);
+    }, []);
 
-    
+
     return (
         <div>
             <h3>hola</h3>

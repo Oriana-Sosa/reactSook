@@ -1,32 +1,40 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "../ItemDetail/itemDetail.module.css"
+import { db } from "../../../db/firebase-config";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetail = () => {
-    const [producto, setProducto] = useState({})
-    const { id } = useParams()
     
-    useEffect(() => {
-        fetch("../../src/products/productos.json")
-        .then((res) => res.json())
-        .then((data) => {
-            const obj = data.find(x => x.id === parseInt(id))
-            setProducto(obj)
-        })
-    }, []);
+    const [item, setItem] = useState({})
+    const { id } = useParams()
 
+    const getItem = async () =>{
+        const docRef = doc(db, "productos", id)
+        const docSnap = await getDoc(docRef)
+        if(docSnap.exists()){
+            setItem(docSnap.data())
+        } else {
+            console.log("No such document!")
+        }
+    }
+
+    useEffect(()=> {
+        getItem()
+    },[id])
 
     return (
         <div className="container">
             <div className="row">
                 <div className="d-flex">
-                    <img src={producto.imagen} className={styles.imagen} alt="" />
-                    <div className="d-flex flex-column my-5">
-                        <h3>{producto.nombre}</h3>
-                        <h5>{producto.categoria}</h5>
-                        <p>${producto.precio}</p>
-                        <p>{producto.descripcion}</p>
-                        <p>{producto.color}</p>
+                    <div className="col-md-6">
+                        <img src={item.imagen} className={styles.imagen} alt="" />
+                    </div>
+                    <div className="d-flex flex-column col-md-6 my-5">
+                        <h3>{item.nombre}</h3>
+                        <p>${item.precio}</p>
+                        <p>{item.descripcion}</p>
+                        <p>{item.color}</p>
                     </div>
                 </div>
             </div>

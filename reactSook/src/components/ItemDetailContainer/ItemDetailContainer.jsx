@@ -1,34 +1,40 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import styles from "../ItemDetailContainer/itemDetailContainer.module.css"
+import { db } from "../../../db/firebase-config"
+import { collection, getDocs } from "firebase/firestore"
 
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState([])
+    const [products, setProducts] = useState([])
+    const ref = collection(db, "productos")
     const { categoria } = useParams()
-    
-    useEffect(() => {
-        fetch("../../src/products/productos.json")
-        .then((res) => res.json())
-        .then((data) => {
-            const obj = data.filter(x => x.categoria === (categoria))
-            setProducto(obj)
-        })
-    }, [categoria]);
+
+    const getItems = async () => {
+        const coll = await getDocs(ref)
+        const productos = coll.docs.map ((doc)=> ({...doc.data(), id: doc.id})) 
+        const obj = productos.filter(x => x.categoria === (categoria))
+            setProducts(obj)
+    }
+
+    useEffect(() =>{
+        getItems()
+    }, [categoria])
 
 
     return (
         <div className="container-fluid">
             <div className="row">
-                {producto.map ((item)=>(
-                    <div className="col-md-3 text-center">
-                    <img src={item.imagen} className={styles.imagen} alt="" />
-                    <h3>{item.nombre}</h3>
-                    <h5>{item.categoria}</h5>
-                    <p>${item.precio}</p>
-                    </div>))}  
+                {products.map((producto)=>
+                (
+                    <Link to={`${producto.id}`} className="col-md-3 text-center">
+                        <img src={producto.imagen} className={styles.imagen} alt="" />
+                        <h3>{producto.nombre}</h3>
+                        <p>${producto.precio}</p>
+                    </Link>
+                ))}
             </div>
-        </div>                
+        </div>           
     )
 }
 

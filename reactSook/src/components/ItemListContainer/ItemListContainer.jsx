@@ -1,19 +1,25 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useContext, useEffect } from "react"
 import Item from "../Item/Item"
+import { ItemsContext } from "../../contexts/itemsContext"
 
 
-const ItemListContainer = ({products}) => {
+const ItemListContainer = () => {
 
+    const {items} =useContext(ItemsContext)
+    const {conseguirItems} = useContext(ItemsContext)
+
+    useEffect(()=>{
+    conseguirItems()
+    }, [] )
 
     return (
         <div className="container-fluid ">
-            <div className="row d-flex flex-wrap justify-content-around"> 
-            {products.map((producto)=>(
-                <Item key={producto.id} producto={producto}/>
+        <div className="row d-flex flex-wrap justify-content-around">
+            {items.map((producto)=>(
+                <Item producto={producto}/>
             ))}
-            </div>
         </div>
+    </div>
     )
 }
 

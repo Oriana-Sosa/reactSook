@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import styles from "../ItemDetailContainer/itemDetailContainer.module.css"
 import { db } from "../../../db/firebase-config"

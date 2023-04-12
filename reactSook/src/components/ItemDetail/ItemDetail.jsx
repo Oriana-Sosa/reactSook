@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from "../ItemDetail/itemDetail.module.css"
 import { db } from "../../../db/firebase-config";
 import { doc, getDoc } from "firebase/firestore";
-import ItemQuantitySelector from "../ItemQuantitySelector/ItemQuantitySelector";
-import ButtonAdd from "../ButtonAdd/ButtonAdd";
+
 
 const ItemDetail = () => {
     
@@ -25,6 +24,31 @@ const ItemDetail = () => {
         getItem()
     },[id])
 
+    //Cart
+    const [cart, setCart] = useState([])
+
+    const addProduct = (item, newQuantity) => {
+        const newCart = cart.filter(prod => prod.id !== item.id)
+        newCart.push({...item, quantity: newQuantity})
+        setCart(newCart)
+    }
+
+    const onAdd = (quantity) => {
+        addProduct(item, quantity)
+    }
+
+
+    const [quantity, setQuantity] = useState(0)
+
+    const resta = () => {
+        setQuantity (quantity -1)
+    }
+
+    const suma = () => {
+        setQuantity (quantity +1)
+    }
+console.log(cart, quantity)
+
     return (
         <div className="container">
             <div className="row">
@@ -37,8 +61,10 @@ const ItemDetail = () => {
                         <p>${item.precio}</p>
                         <p>{item.descripcion}</p>
                         <p>{item.color}</p>
-                        <ItemQuantitySelector/>
-                        <ButtonAdd/>
+                        <button onClick={resta}>-</button>
+                        <p>{quantity}</p>
+                        <button onClick={suma}>+</button>
+                        <button onClick={onAdd}>Agregar al carrito</button>
                     </div>
                 </div>
             </div>

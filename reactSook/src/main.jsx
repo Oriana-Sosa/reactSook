@@ -4,7 +4,7 @@ import App from './App'
 import {BrowserRouter} from 'react-router-dom'
 import { ItemsProvider } from './contexts/itemsContext'
 import { QuantityProvider } from './contexts/QuantitySelectorContext'
-import { CartProvider } from './contexts/CartContext'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 

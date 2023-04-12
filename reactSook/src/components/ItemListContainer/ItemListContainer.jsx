@@ -8,9 +8,11 @@ const ItemListContainer = () => {
     const {items} =useContext(ItemsContext)
     const {conseguirItems} = useContext(ItemsContext)
 
+
     useEffect(()=>{
     conseguirItems()
     }, [] )
+
 
     return (
         <div className="container-fluid ">

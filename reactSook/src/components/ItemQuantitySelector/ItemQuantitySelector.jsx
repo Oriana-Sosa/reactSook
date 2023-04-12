@@ -14,6 +14,7 @@ const ItemQuantitySelector = () => {
             <button onClick={reduce}>-</button>
             <div>{number}</div>
             <button onClick={add}>+</button>
+            <button>Agregar al carrito</button>
         </div>
     )
 }

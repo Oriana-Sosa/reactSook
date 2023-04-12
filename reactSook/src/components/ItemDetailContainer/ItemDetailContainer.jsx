@@ -9,6 +9,7 @@ const ItemDetailContainer = () => {
     const [products, setProducts] = useState([])
     const ref = collection(db, "productos")
     const { categoria } = useParams()
+    
 
     const getItems = async () => {
         const coll = await getDocs(ref)
@@ -20,6 +21,7 @@ const ItemDetailContainer = () => {
     useEffect(() =>{
         getItems()
     }, [categoria])
+
 
 
     return (

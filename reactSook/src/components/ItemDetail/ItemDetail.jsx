@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import styles from "../ItemDetail/itemDetail.module.css"
 import { db } from "../../../db/firebase-config";
 import { doc, getDoc } from "firebase/firestore";
+import ItemQuantitySelector from "../ItemQuantitySelector/ItemQuantitySelector";
+import ButtonAdd from "../ButtonAdd/ButtonAdd";
 
 const ItemDetail = () => {
     
@@ -35,6 +37,8 @@ const ItemDetail = () => {
                         <p>${item.precio}</p>
                         <p>{item.descripcion}</p>
                         <p>{item.color}</p>
+                        <ItemQuantitySelector/>
+                        <ButtonAdd/>
                     </div>
                 </div>
             </div>

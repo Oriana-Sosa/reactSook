@@ -23,9 +23,20 @@ const ItemDetail = () => {
     
     const {cart} = useContext(CartContext)
     const {onAdd} = useContext(CartContext)
-    const {quantity} = useContext(CartContext)
-    const {resta} = useContext(CartContext)
-    const {suma} = useContext(CartContext)
+
+    const [quantity, setQuantity] = useState(0)
+
+    const resta = () => {
+        setQuantity (quantity -1)
+    }
+
+    const suma = () => {
+        setQuantity (quantity +1)
+    }
+
+    const agregarAlCarrito = () =>{
+        onAdd(item, quantity)
+    }
 
 console.log(cart)
     return (
@@ -43,7 +54,7 @@ console.log(cart)
                         <button onClick={resta}>-</button>
                         <p>{quantity}</p>
                         <button onClick={suma}>+</button>
-                        <button onClick={onAdd}>Agregar al carrito</button>
+                        <button onClick={agregarAlCarrito}>Agregar al carrito</button>
                     </div>
                 </div>
             </div>

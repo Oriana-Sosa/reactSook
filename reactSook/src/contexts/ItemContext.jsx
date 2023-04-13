@@ -11,7 +11,9 @@ function ItemProvider(props){
         const docRef = doc(db, "productos", id)
         const docSnap = await getDoc(docRef)
         if(docSnap.exists()){
-            setItem(docSnap.data())
+            let item = docSnap.data()
+            item.id=id
+            setItem(item)
         } else {
             console.log("No such document!")
         }

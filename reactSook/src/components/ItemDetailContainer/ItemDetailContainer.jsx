@@ -18,6 +18,8 @@ const ItemDetailContainer = () => {
             setProducts(obj)
     }
 
+
+
     useEffect(() =>{
         getItems()
     }, [categoria])
@@ -29,7 +31,7 @@ const ItemDetailContainer = () => {
             <div className="row">
                 {products.map((producto)=>
                 (
-                    <Link to={`${producto.id}`} className="col-md-3 text-center">
+                    <Link key={producto.id} to={`${producto.id}`} className="col-md-3 text-center">
                         <img src={producto.imagen} className={styles.imagen} alt="" />
                         <h3>{producto.nombre}</h3>
                         <p>${producto.precio}</p>

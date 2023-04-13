@@ -18,7 +18,8 @@ const ItemListContainer = () => {
         <div className="container-fluid ">
         <div className="row d-flex flex-wrap justify-content-around">
             {items.map((producto)=>(
-                <Item producto={producto}/>
+                <Item key={producto.id} producto={producto}/>
+                
             ))}
         </div>
     </div>

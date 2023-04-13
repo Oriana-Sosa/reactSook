@@ -41,10 +41,13 @@ const ItemDetail = () => {
         onAdd(item, quantity)
     }
 
-    const {recuperarDatos} = useContext(CartContext)
-   
-console.log(cart)
- recuperarDatos(quantity)
+    const {precio} = useContext(CartContext)
+    const {calcularTotalCompra} = useContext(CartContext)
+    console.log(cart)
+
+
+calcularTotalCompra()
+
     return (
         <div className="container">
             <div className="row">
@@ -63,6 +66,7 @@ console.log(cart)
                         <button onClick={agregarAlCarrito}>Agregar al carrito</button>
                         <button onClick={eliminarCarrito}>Eliminar Carrito</button>
                         <button onClick={eliminar}>Eliminar</button>
+                        <h3>{precio}</h3>
                     </div>
                 </div>
             </div>

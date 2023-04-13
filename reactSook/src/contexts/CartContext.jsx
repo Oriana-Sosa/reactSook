@@ -33,15 +33,19 @@ function CartProvider(props){
         setCart([...newCarrito])
     }
 
-    function recuperarDatos(info){
-        cart.forEach((info)=>{
-        console.log(info)
-    })
+    const [precio, setPrecio] = useState(0)
+
+    let total
+    const calcularTotalCompra = () => {
+        total = 0; 
+        cart.forEach( libro => {
+            return total += libro.precio * libro.quantity;
+        });
+        setPrecio(total)
     }
-    
 
 return(
-    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, recuperarDatos}}>
+    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, calcularTotalCompra, precio}}>
         {props.children}
     </CartContext.Provider>
 )

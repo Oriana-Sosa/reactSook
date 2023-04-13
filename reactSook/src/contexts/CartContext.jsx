@@ -43,9 +43,14 @@ function CartProvider(props){
         });
         setPrecio(total)
     }
+    
+    const [contador, setContador] = useState(0)
 
+    const getContador = (num) =>{
+        setContador(prevContador => prevContador + num)
+    }
 return(
-    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, calcularTotalCompra, precio}}>
+    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, calcularTotalCompra, precio, contador, getContador}}>
         {props.children}
     </CartContext.Provider>
 )

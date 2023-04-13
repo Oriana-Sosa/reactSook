@@ -5,6 +5,7 @@ import { db } from "../../../db/firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 import { ItemContext } from "../../contexts/ItemContext";
 import { CartContext } from "../../contexts/CartContext";
+import { QuantityContext } from "../../contexts/QuantityContext";
 
 
 
@@ -26,24 +27,23 @@ const ItemDetail = () => {
     const {cart} = useContext(CartContext)
     const {onAdd} = useContext(CartContext)
     const {eliminar} = useContext(CartContext)
-
-    const [quantity, setQuantity] = useState(0)
-
-    const resta = () => {
-        setQuantity (quantity -1)
-    }
-
-    const suma = () => {
-        setQuantity (quantity +1)
-    }
-
-    const agregarAlCarrito = () =>{
-        onAdd(item, quantity)
-    }
-
+    const {resta} = useContext(QuantityContext)
+    const {suma} = useContext(QuantityContext)
+    const {quantity} = useContext(QuantityContext)
+   
     const {precio} = useContext(CartContext)
     const {calcularTotalCompra} = useContext(CartContext)
     console.log(cart)
+
+    const {getContador} = useContext(CartContext)
+    const {contador}= useContext(CartContext)
+    console.log(contador)
+
+    const agregarAlCarrito = () =>{
+        onAdd(item, quantity)
+        getContador(quantity)
+    }
+
 
 
 calcularTotalCompra()

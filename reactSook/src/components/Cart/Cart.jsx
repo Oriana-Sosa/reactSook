@@ -5,25 +5,44 @@ import { db } from "../../../db/firebase-config"
 
 
 const Cart = () => {
-    const ordersRef = collection(db, "orders")
     const [nombre, setNombre] = useState("")
     const [apellido, setApellido] = useState("")
-    const [number, setNumber] = useState("0")
+    const [telefono, setTelefono] = useState("0")
+    const [mailUno, setMailUno] = useState("")
+    const [mailDos, setMailDos] =useState("")
+    const [emailConfirmado, setEmailConfirmado] = useState("")
 
+let emailReal
+
+
+useEffect(()=>{
+    if(mailUno === mailDos){
+        emailReal = mailUno
+        setEmailConfirmado(emailReal)
+    } else{
+        console.log("No")
+    }
+},[mailDos, mailUno])
+    
     const order = {
-    buyer: {
+    cliente: {
         name: {nombre},
-        lastName: {apellido}
+        lastName: {apellido},
+        phone: {telefono},
+        mail: {emailConfirmado}
     }
 }
 
     const prevent = (e) => {
         e.preventDefault()
-        const db = getFirestore()
+        if (emailConfirmado){
+            const db = getFirestore()
         const ordersCollection = collection(db, "orders")
         addDoc(ordersCollection, order)
-        .then(({id})=>console.log(id))
+        .then(({id})=>console.log(id)) 
+        }
     }
+
 
     return (
         <div>
@@ -33,9 +52,9 @@ const Cart = () => {
             <form action="">
                 <input type="text" placeholder="Nombre" required onChange={(e)=> setNombre(e.target.value)} />
                 <input type="text" name="apellido" id="apellido" placeholder="Apellido" required onChange={(e)=> setApellido(e.target.value)} />
-                <input type="number" name="telefono" id="telefono" placeholder="Telefono" required onChange={(e)=> setNumero(e.target.value)}/>
-                <input type="email" name="emailUno" id="emailUno" placeholder="Email" required/>
-                <input type="email" name="emailDos" id="emailDos" placeholder="Confirmación email" required/>
+                <input type="number" name="telefono" id="telefono" placeholder="Telefono" required onChange={(e)=> setTelefono(e.target.value)}/>
+                <input type="email" name="emailUno" id="emailUno" placeholder="Email" required onChange={(e)=> setMailUno(e.target.value)}/>
+                <input type="email" name="emailDos" id="emailDos" placeholder="Confirmación email" required onChange={(e)=> setMailDos(e.target.value)}/>
                 <input type="submit" value="Enviar" onClick={prevent}/>
             </form>
 

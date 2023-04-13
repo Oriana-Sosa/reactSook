@@ -9,6 +9,7 @@ const CartContext = createContext()
 
 
 function CartProvider(props){
+    const {item} = useContext(ItemContext)
     
     const [cart, setCart] = useState([])
 
@@ -22,10 +23,25 @@ function CartProvider(props){
         addProduct(item, quantity)
     }
 
+    const eliminarCarrito = () => {
+        setCart([])
+    }
 
+    const eliminar = () =>{
+        const buscado = cart.find(producto => producto.id === item.id)
+        const newCarrito = cart.filter(producto => producto.id !== buscado.id)
+        setCart([...newCarrito])
+    }
+
+    function recuperarDatos(info){
+        cart.forEach((info)=>{
+        console.log(info)
+    })
+    }
+    
 
 return(
-    <CartContext.Provider value={{cart, onAdd}}>
+    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, recuperarDatos}}>
         {props.children}
     </CartContext.Provider>
 )

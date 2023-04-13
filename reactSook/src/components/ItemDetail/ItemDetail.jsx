@@ -12,7 +12,9 @@ const ItemDetail = () => {
     
     const {item} = useContext(ItemContext)
     const {getItem} = useContext(ItemContext)
+    const {eliminarCarrito} = useContext(CartContext)
     const { id } = useParams()
+
 
     
     useEffect(()=> {
@@ -23,6 +25,7 @@ const ItemDetail = () => {
     
     const {cart} = useContext(CartContext)
     const {onAdd} = useContext(CartContext)
+    const {eliminar} = useContext(CartContext)
 
     const [quantity, setQuantity] = useState(0)
 
@@ -38,7 +41,10 @@ const ItemDetail = () => {
         onAdd(item, quantity)
     }
 
+    const {recuperarDatos} = useContext(CartContext)
+   
 console.log(cart)
+ recuperarDatos(quantity)
     return (
         <div className="container">
             <div className="row">
@@ -55,6 +61,8 @@ console.log(cart)
                         <p>{quantity}</p>
                         <button onClick={suma}>+</button>
                         <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+                        <button onClick={eliminarCarrito}>Eliminar Carrito</button>
+                        <button onClick={eliminar}>Eliminar</button>
                     </div>
                 </div>
             </div>

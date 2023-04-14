@@ -3,7 +3,7 @@
 ### Instalación
 
 - Para poder instalar el proyecto:
-*git clone* https://github.com/Oriana-Sosa/reactSook.git
+```git clone https://github.com/Oriana-Sosa/reactSook.git```
 
 -Una vez descargado, procedemos a instalarlo y correrlo
 ```

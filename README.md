@@ -2,8 +2,15 @@
 
 ### Instalación
 
-- Para poder instalar el proyecto, primero debe bajarlo este mismo repositorio.
-- Luego, deberá correr *npm i* y *npm run dev* para poder hacer funcionar el sitio.
+- Para poder instalar el proyecto:
+*git clone* https://github.com/Oriana-Sosa/reactSook.git
+
+-Una vez descargado, procedemos a instalarlo y correrlo
+```
+cd reactSook/reactSook/
+npm install
+npm run dev
+```
 
 Tecnologías utilizadas
 - React js

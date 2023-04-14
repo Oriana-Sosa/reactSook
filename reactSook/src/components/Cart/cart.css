@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Noto+Serif&family=Playfair+Display:ital,wght@1,500&family=Reem+Kufi+Fun&display=swap');
+
+.titles{
+    font-family: 'Playfair Display', serif;
+}
+
+.productsInfo{
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+.imgCarrito{
+    width: 100%;
+}
+
+.buttonCarrito{
+    width: 150px;
+}

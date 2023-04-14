@@ -1,0 +1,14 @@
+.carrito{
+    width: 40px;
+    
+}
+
+.linkContador{
+    color: black;
+    text-decoration: none;
+}
+
+
+.linkContador:hover{
+    color: black;
+}

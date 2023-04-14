@@ -36,6 +36,7 @@ function CartProvider(props){
     const [precio, setPrecio] = useState(0)
 
     let total
+   
     const calcularTotalCompra = () => {
         total = 0; 
         cart.forEach( libro => {
@@ -44,13 +45,22 @@ function CartProvider(props){
         setPrecio(total)
     }
     
-    const [contador, setContador] = useState(0)
+    useEffect(()=>{
+        calcularTotalCompra()
+        recalcularContador()
+    }, [cart])
 
-    const getContador = (num) =>{
-        setContador(prevContador => prevContador + num)
+    const [contador, setContador] = useState(0)
+    const recalcularContador = () => {
+        total = 0
+        cart.forEach (item => {
+            return total += item.quantity
+        })
+        setContador(total)
     }
+
 return(
-    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, calcularTotalCompra, precio, contador, getContador}}>
+    <CartContext.Provider value={{cart, onAdd, eliminarCarrito, eliminar, precio, contador}}>
         {props.children}
     </CartContext.Provider>
 )

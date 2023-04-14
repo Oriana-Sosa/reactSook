@@ -13,7 +13,6 @@ const ItemDetail = () => {
     
     const {item} = useContext(ItemContext)
     const {getItem} = useContext(ItemContext)
-    const {eliminarCarrito} = useContext(CartContext)
     const { id } = useParams()
 
 
@@ -32,7 +31,7 @@ const ItemDetail = () => {
     const {quantity} = useContext(QuantityContext)
    
     const {precio} = useContext(CartContext)
-    const {calcularTotalCompra} = useContext(CartContext)
+
     console.log(cart)
 
     const {getContador} = useContext(CartContext)
@@ -46,7 +45,7 @@ const ItemDetail = () => {
 
 
 
-calcularTotalCompra()
+
 
     return (
         <div className="container">
@@ -64,8 +63,7 @@ calcularTotalCompra()
                         <p>{quantity}</p>
                         <button onClick={suma}>+</button>
                         <button onClick={agregarAlCarrito}>Agregar al carrito</button>
-                        <button onClick={eliminarCarrito}>Eliminar Carrito</button>
-                        <button onClick={eliminar}>Eliminar</button>
+                        <button onClick={eliminar}>Eliminar del carrito</button>
                         <h3>{precio}</h3>
                     </div>
                 </div>

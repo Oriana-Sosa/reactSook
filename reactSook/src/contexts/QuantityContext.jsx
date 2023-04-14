@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { CartContext } from "./CartContext";
 
 
 const QuantityContext = createContext()
@@ -8,7 +9,9 @@ function QuantityProvider(props){
 
 
     const resta = () => {
-        setQuantity (quantity -1)
+        if (quantity > 0){
+            setQuantity (quantity -1)
+        }
     }
 
     const suma = () => {
